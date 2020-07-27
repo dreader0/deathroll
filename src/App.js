@@ -13,20 +13,17 @@ const initialState = {
   },
 }
 
-const rulesList = {
-  69: {
+const rulesList = [{
     num: 69,
     text: "lock arms and drink"
-  },
-  420: {
+  },{
     num: 420,
     text: "blaze it"
-  },
-  17: {
+  },{
     num: 17,
     text: "naked mile"
   }
-}
+]
   
 class App extends Component{
   constructor() {
@@ -35,22 +32,23 @@ class App extends Component{
     this.dupe = 2;
   }
 
-  onRoll = ({ num }) => {
+  onRoll = (num) => {
     var newNum
     if (num === 1) {
       newNum = 500;
     } else {
       newNum = Math.ceil(Math.random() * num);
     }
-    var newText = ""
+    var newText = "drink"
     if (newNum === 1) {
       newText = "YOU LOSE";
     } else {
-      if (rulesList[newNum]) {
-        newText = rulesList[newNum];
-      } else {
-        newText = "drink"
+      for (var i; i < rulesList.length; i++) {
+        if (rulesList[i].num === newNum) {
+          newText = rulesList[i].text;
+        }
       }
+      
     }
     if (newNum === num) {
       newText += (" X" + this.dupe)
@@ -74,10 +72,10 @@ class App extends Component{
             <Col><Titlebar /></Col>
           </Row>
           <Row>
-            <Col><Rolled num={this.state.rule.num} text={this.state.rule.text}/></Col>
+            <Col><BigRedButton num={this.state.rule.num} onRoll={this.onRoll}/></Col>
           </Row>
           <Row>
-            <Col><BigRedButton num={this.state.rule.num} onRoll={this.onRoll}/></Col>
+            <Col><Rolled num={this.state.rule.num} text={this.state.rule.text}/></Col>
           </Row>
         </Container>
     );

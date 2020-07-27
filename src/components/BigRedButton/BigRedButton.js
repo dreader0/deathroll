@@ -9,7 +9,7 @@ const BigRedButton = ({onRoll, num}) => {
         <Col className="mt-4">
           {/* style={{ height: '18rem' }}  className="mt-4 border border-button rounded-circle bigButton"> */}
           {/* <div classname="h-100 w-100" onClick={() => onRoll({ num })}> */}
-          <Button className="btn btn-default btn-circle bigButton" onClick={() => onRoll({ num })}>
+          <Button className="btn btn-default btn-circle bigButton" onClick={() => onRoll(num)}>
             <Row className="justify-content-center">
               <Col xs={6}>
                 {num === 1 ?

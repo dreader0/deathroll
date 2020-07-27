@@ -2,6 +2,7 @@
   background-color: #6E0000 !important;
   border-width: .4rem !important;
   border-color: #600000 !important;
+  box-shadow: #000000AA -5px 10px !important;
 }
 
 .numWindow {
@@ -18,10 +19,8 @@
   transition: all .2s !important;
 }
 
-.btn:focus {
-  box-shadow: none !important;
-}
-
 .btn:active {
-  background-color: #600000 !important;
+  /* background-color: #600000 !important; */
+  /* box-shadow: black 2.5px 5px !important; */
+  transform: scale(0.98, 0.98);
 }
