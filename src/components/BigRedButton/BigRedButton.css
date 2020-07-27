@@ -1,0 +1,27 @@
+.bigButton {
+  background-color: #6E0000 !important;
+  border-width: .4rem !important;
+  border-color: #600000 !important;
+}
+
+.numWindow {
+  background-color: #600000;
+}
+
+.btn-circle {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50% !important;
+}
+
+.btn {
+  transition: all .2s !important;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.btn:active {
+  background-color: #600000 !important;
+}
