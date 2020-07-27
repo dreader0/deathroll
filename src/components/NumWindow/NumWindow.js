@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import './NumWindow.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const NumWindow = ({num}) => {
   return (
@@ -11,7 +12,10 @@ const NumWindow = ({num}) => {
           <p></p>
         }
         <div className="rounded px-2 pt-2 pb-1 numWindow">
-          <h1>{num}</h1>
+          {num === 1 ?
+            <h1 className="skull"><FontAwesomeIcon icon="skull" /></h1> :
+            <h1>{num}</h1>
+          }
         </div>
         {num === 1 ?
           <h6 className="mt-1">Click to Reset</h6> :
