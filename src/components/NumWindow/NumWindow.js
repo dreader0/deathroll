@@ -10,7 +10,7 @@ const NumWindow = ({num}) => {
           <h5>Game Over!</h5> :
           <p></p>
         }
-        <div className="rounded p-2 numWindow">
+        <div className="rounded px-2 pt-2 pb-1 numWindow">
           <h1>{num}</h1>
         </div>
         {num === 1 ?
