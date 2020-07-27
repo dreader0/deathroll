@@ -21,6 +21,10 @@ const rulesList = {
   420: {
     num: 420,
     text: "blaze it"
+  },
+  17: {
+    num: 17,
+    text: "naked mile"
   }
 }
   
