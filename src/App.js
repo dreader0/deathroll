@@ -11,11 +11,8 @@ const initialState = {
     num: 123,
     text: "not a rule"
   },
-<<<<<<< Updated upstream
-=======
   buttonNum: 123,
   rolling: false
->>>>>>> Stashed changes
 }
 
 const rulesList = [{
@@ -41,6 +38,7 @@ class App extends Component{
 
   onRoll = (num) => {
     var newNum
+    var stateTimeout
     if (num === 1) {
       newNum = 500;
     } else {
@@ -65,14 +63,6 @@ class App extends Component{
     }
     
     this.setState({
-<<<<<<< Updated upstream
-        rule: {
-          num: newNum,
-          text: newText
-        }
-      })
-    
-=======
       buttonNum: newNum,
       rolling: true
     })
@@ -92,7 +82,6 @@ class App extends Component{
       },
       rolling: false
     });
->>>>>>> Stashed changes
   }
 
   render() {
