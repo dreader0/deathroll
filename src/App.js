@@ -11,7 +11,8 @@ const initialState = {
     num: 123,
     text: "not a rule"
   },
-  buttonNum : 123
+  buttonNum: 123,
+  rolling: false
 }
 
 const rulesList = [{
@@ -63,7 +64,8 @@ class App extends Component{
     }
     
     this.setState({
-      buttonNum : newNum
+      buttonNum: newNum,
+      rolling: true
     })
     var self = this;
     if (newNum === 1) {
@@ -78,7 +80,8 @@ class App extends Component{
       rule: {
         num: newNum,
         text: newText
-      }
+      },
+      rolling: false
     });
   }
 
@@ -92,7 +95,7 @@ class App extends Component{
           <Col><BigRedButton num={this.state.buttonNum} onRoll={this.onRoll} formatValue={this.formatValue}/></Col>
           </Row>
           <Row>
-            <Col><Rolled num={this.state.rule.num} text={this.state.rule.text}/></Col>
+          <Col><Rolled num={this.state.rule.num} text={this.state.rule.text} rolling={this.state.rolling}/></Col>
           </Row>
         </Container>
     );
