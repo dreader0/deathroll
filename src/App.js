@@ -48,7 +48,7 @@ class App extends Component{
     if (newNum === 1) {
       newText = "YOU LOSE";
     } else {
-      for (var i; i < rulesList.length; i++) {
+      for (var i = 0; i < rulesList.length; i++) {
         if (rulesList[i].num === newNum) {
           newText = rulesList[i].text;
         }
