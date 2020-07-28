@@ -32,6 +32,8 @@ class App extends Component{
     this.dupe = 2;
   }
 
+  formatValue = (value) => value.toFixed(0);
+
   onRoll = (num) => {
     var newNum
     if (num === 1) {
@@ -56,6 +58,7 @@ class App extends Component{
     } else {
       this.dupe = 2;
     }
+    
     this.setState({
         rule: {
           num: newNum,
@@ -72,7 +75,7 @@ class App extends Component{
             <Col><Titlebar /></Col>
           </Row>
           <Row>
-            <Col><BigRedButton num={this.state.rule.num} onRoll={this.onRoll}/></Col>
+          <Col><BigRedButton num={this.state.rule.num} onRoll={this.onRoll} formatValue={this.formatValue}/></Col>
           </Row>
           <Row>
             <Col><Rolled num={this.state.rule.num} text={this.state.rule.text}/></Col>
