@@ -37,7 +37,7 @@ class App extends Component{
 
   onRoll = (num) => {
     var newNum
-    var stateTimeout = 1000;
+    var stateTimeout = 1000
     if (num === 1) {
       newNum = 500;
     } else {
