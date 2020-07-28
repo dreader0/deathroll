@@ -11,6 +11,7 @@ const initialState = {
     num: 123,
     text: "not a rule"
   },
+  buttonNum : 123
 }
 
 const rulesList = [{
@@ -36,6 +37,7 @@ class App extends Component{
 
   onRoll = (num) => {
     var newNum
+    var stateTimeout = 1000;
     if (num === 1) {
       newNum = 500;
     } else {
@@ -55,17 +57,29 @@ class App extends Component{
     if (newNum === num) {
       newText += (" X" + this.dupe)
       this.dupe++;
+      stateTimeout = 0;
     } else {
       this.dupe = 2;
     }
     
     this.setState({
-        rule: {
-          num: newNum,
-          text: newText
-        }
-      })
-    
+      buttonNum : newNum
+    })
+    var self = this;
+    if (newNum === 1) {
+      stateTimeout = 0;
+      newNum = 1;
+    }
+    setTimeout(function () { self.setRolledRule(newNum, newText); }, stateTimeout);
+  }
+
+  setRolledRule = (newNum, newText) => {
+    this.setState({
+      rule: {
+        num: newNum,
+        text: newText
+      }
+    });
   }
 
   render() {
@@ -75,7 +89,7 @@ class App extends Component{
             <Col><Titlebar /></Col>
           </Row>
           <Row>
-          <Col><BigRedButton num={this.state.rule.num} onRoll={this.onRoll} formatValue={this.formatValue}/></Col>
+          <Col><BigRedButton num={this.state.buttonNum} onRoll={this.onRoll} formatValue={this.formatValue}/></Col>
           </Row>
           <Row>
             <Col><Rolled num={this.state.rule.num} text={this.state.rule.text}/></Col>
