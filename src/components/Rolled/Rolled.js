@@ -1,14 +1,18 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './Rolled.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Rolled = ({num, text}) => {
+const Rolled = ({num, text, rolling}) => {
   return (
     <Container>
       <Row className="justify-content-center">
         <Col xs={9} lg={6}>
           <Card className="mt-4 pt-2 pb-1 rollCard">
-            <h5>{num + ' - ' + text}</h5>
+            {rolling ?
+              <h5 className="rollingIcon"><FontAwesomeIcon icon="skull" /></h5> :
+              <h5>{num + ' - ' + text}</h5>
+            }
           </Card>
         </Col>
       </Row>

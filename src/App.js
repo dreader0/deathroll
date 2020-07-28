@@ -11,6 +11,11 @@ const initialState = {
     num: 123,
     text: "not a rule"
   },
+<<<<<<< Updated upstream
+=======
+  buttonNum: 123,
+  rolling: false
+>>>>>>> Stashed changes
 }
 
 const rulesList = [{
@@ -60,12 +65,34 @@ class App extends Component{
     }
     
     this.setState({
+<<<<<<< Updated upstream
         rule: {
           num: newNum,
           text: newText
         }
       })
     
+=======
+      buttonNum: newNum,
+      rolling: true
+    })
+    var self = this;
+    if (newNum === 1) {
+      stateTimeout = 0;
+      newNum = 1;
+    }
+    setTimeout(function () { self.setRolledRule(newNum, newText); }, stateTimeout);
+  }
+
+  setRolledRule = (newNum, newText) => {
+    this.setState({
+      rule: {
+        num: newNum,
+        text: newText
+      },
+      rolling: false
+    });
+>>>>>>> Stashed changes
   }
 
   render() {
@@ -78,7 +105,7 @@ class App extends Component{
           <Col><BigRedButton num={this.state.rule.num} onRoll={this.onRoll} formatValue={this.formatValue}/></Col>
           </Row>
           <Row>
-            <Col><Rolled num={this.state.rule.num} text={this.state.rule.text}/></Col>
+          <Col><Rolled num={this.state.rule.num} text={this.state.rule.text} rolling={this.state.rolling}/></Col>
           </Row>
         </Container>
     );
