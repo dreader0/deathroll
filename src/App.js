@@ -6,13 +6,14 @@ import BigRedButton from './components/BigRedButton/BigRedButton';
 import './App.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
+const initMax = 123;
+
 const initialState = {
-  rule: {
-    num: 123,
-    text: "not a rule"
-  },
-  buttonNum: 123,
-  rolling: false
+  ruleNum: initMax,
+  ruleText: "not a rule",
+  rolling: false,
+  gameOver: false,
+  dupe: 2
 }
 
 const rulesList = [{
@@ -26,75 +27,89 @@ const rulesList = [{
     text: "naked mile"
   }
 ]
+
+// const randomRulesBank = ["never have i ever", ""]
   
 class App extends Component{
   constructor() {
     super()
     this.state = initialState;
-    this.dupe = 2;
   }
 
   formatValue = (value) => value.toFixed(0);
 
-  onRoll = (num) => {
-    var newNum
-    var stateTimeout = 1000
+  rollNewNum = (num) => {
+    var newNum = 0;
     if (num === 1) {
-      newNum = 500;
+      newNum = initMax;
+      this.setState({gameOver:false})
     } else {
       newNum = Math.ceil(Math.random() * num);
     }
-    var newText = "drink"
+    return newNum;
+  }
+
+  setNewText = (newNum) => {
+    var newText = "DRINK"
     if (newNum === 1) {
-      newText = "YOU LOSE";
+      newText = "YOU LOSE, TAKE A SHOT";
     } else {
       for (var i; i < rulesList.length; i++) {
         if (rulesList[i].num === newNum) {
           newText = rulesList[i].text;
         }
       }
-      
     }
+    return newText;
+  }
+
+  onRoll = (num) => {
+    var newNum = this.rollNewNum(num);
+    var newText = this.setNewText(newNum);
+    var stateTimeout = 1000
+    
+    
     if (newNum === num) {
-      newText += (" X" + this.dupe)
-      this.dupe++;
+      newText += (" X" + this.state.dupe)
+      this.setState({dupe: (this.state.dupe) + 1})
+      stateTimeout = 0;
     } else {
-      this.dupe = 2;
+      this.setState({dupe:2});
     }
     
     this.setState({
-      buttonNum: newNum,
+      ruleNum: newNum,
       rolling: true
     })
-    var self = this;
-    if (newNum === 1) {
-      stateTimeout = 0;
-      newNum = 1;
+
+    var newState = {
+      ruleText: newText,
+      rolling: false,
     }
-    setTimeout(function () { self.setRolledRule(newNum, newText); }, stateTimeout);
+    if (newNum === 1) {
+      newState.gameOver = true;
+    }
+    
+    var self = this;
+    setTimeout(function () { self.setRolledRule(newState); }, stateTimeout);
   }
 
-  setRolledRule = (newNum, newText) => {
-    this.setState({
-      rule: {
-        num: newNum,
-        text: newText
-      },
-      rolling: false
-    });
+  setRolledRule = (newState) => {
+    this.setState(newState);
   }
 
   render() {
+    const { ruleNum, ruleText, rolling, gameOver } = this.state;
     return (
         <Container className="App">
           <Row>
             <Col><Titlebar /></Col>
           </Row>
           <Row>
-          <Col><BigRedButton num={this.state.rule.num} onRoll={this.onRoll} formatValue={this.formatValue}/></Col>
+          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} formatValue={this.formatValue} gameOver={gameOver}/></Col>
           </Row>
           <Row>
-          <Col><Rolled num={this.state.rule.num} text={this.state.rule.text} rolling={this.state.rolling}/></Col>
+            <Col><Rolled text={ruleText} rolling={rolling}/></Col>
           </Row>
         </Container>
     );
