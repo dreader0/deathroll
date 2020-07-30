@@ -10,7 +10,7 @@ const initMax = 123;
 
 const initialState = {
   ruleNum: initMax,
-  ruleText: "not a rule",
+  ruleText: "PRESS THE BUTTON",
   rolling: false,
   gameOver: false,
   dupe: 2
@@ -38,17 +38,6 @@ class App extends Component{
 
   formatValue = (value) => value.toFixed(0);
 
-  rollNewNum = (num) => {
-    var newNum = 0;
-    if (num === 1) {
-      newNum = initMax;
-      this.setState({gameOver:false})
-    } else {
-      newNum = Math.ceil(Math.random() * num);
-    }
-    return newNum;
-  }
-
   setNewText = (newNum) => {
     var newText = "DRINK"
     if (newNum === 1) {
@@ -64,34 +53,41 @@ class App extends Component{
   }
 
   onRoll = (num) => {
-    var newNum = this.rollNewNum(num);
-    var newText = this.setNewText(newNum);
-    var stateTimeout = 1000
-    
-    
-    if (newNum === num) {
-      newText += (" X" + this.state.dupe)
-      this.setState({dupe: (this.state.dupe) + 1})
-      stateTimeout = 0;
+    if (num === 1) {
+      this.setState(initialState);
     } else {
-      this.setState({dupe:2});
-    }
+      var newNum = Math.ceil(Math.random() * num);
+      var newText = this.setNewText(newNum);
+      var stateTimeout = 1000
     
-    this.setState({
-      ruleNum: newNum,
-      rolling: true
-    })
+    
+      if (newNum === num) {
+        newText += (" X" + this.state.dupe)
+        this.setState({ dupe: (this.state.dupe) + 1 })
+        stateTimeout = 0;
+      } else {
+        this.setState({ dupe: 2 });
+      }
+    
+      this.setState({
+        ruleNum: newNum,
+        rolling: true
+      })
 
-    var newState = {
-      ruleText: newText,
-      rolling: false,
-    }
-    if (newNum === 1) {
-      newState.gameOver = true;
-    }
+      var newState = {
+        ruleText: newText,
+        rolling: false,
+      }
+      if (newNum === 1) { // 1 means you lose!
+        newState.gameOver = true;
+        if (num === 2) { // don't delay between 2 and 1
+          stateTimeout = 0;
+        }
+      }
     
-    var self = this;
-    setTimeout(function () { self.setRolledRule(newState); }, stateTimeout);
+      var self = this;
+      setTimeout(function () { self.setRolledRule(newState); }, stateTimeout);
+    }
   }
 
   setRolledRule = (newState) => {
