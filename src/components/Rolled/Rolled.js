@@ -10,8 +10,8 @@ const Rolled = ({text, rolling}) => {
         <Col xs={9} lg={6}>
           <Card className="mt-4 pt-2 pb-1 rollCard">
             {rolling ?
-              <h5 className="rollingIcon"><FontAwesomeIcon icon="skull" /></h5> :
-              <h5>{text}</h5>
+              <h5 className="rollingIcon rollText"><FontAwesomeIcon icon="skull" /></h5> :
+              <h5 className="rollText">{text}</h5>
             }
           </Card>
         </Col>

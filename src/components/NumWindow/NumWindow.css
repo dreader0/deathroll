@@ -3,6 +3,10 @@
   box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
+.windowText {
+  margin-top: .3rem;
+}
+
 /* .skull {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
 } */

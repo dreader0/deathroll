@@ -9,17 +9,17 @@ const NumWindow = ({formatValue, num, gameOver}) => {
   return (
     <Row className="justify-content-center">
       <Col xs={6}>
-        {gameOver === true ?
+        {gameOver ?
           <h5>Game Over!</h5> :
           <p></p>
         }
-        <div className="rounded px-2 pt-2 pb-1 numWindow">
-          {gameOver === true ?
-            <h1 className="skull"><FontAwesomeIcon icon="skull" /></h1> :
-            <h1> <AnimatedNumber value={num} formatValue={formatValue}/></h1>
+        <div  className="rounded px-2 pt-2 pb-1 numWindow">
+          {gameOver ?
+            <h1 className="skull windowText"><FontAwesomeIcon icon="skull" /></h1> :
+            <h1 className="windowText"> <AnimatedNumber value={num} formatValue={formatValue}/></h1>
           }
         </div>
-        {gameOver === true ?
+        {gameOver ?
           <h6 className="mt-1">Click to Reset</h6> :
           <p></p>
         }

@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
-// import logo from './logo.svg';
 import Titlebar from './components/Titlebar/Titlebar';
 import Rolled from './components/Rolled/Rolled';
 import BigRedButton from './components/BigRedButton/BigRedButton';
-import './App.css';
 import { Container, Row, Col } from 'react-bootstrap';
+import './App.css';
 
-const initMax = 123;
-
+// initial values at the start of the game
 const initialState = {
-  ruleNum: initMax,
-  ruleText: "PRESS THE BUTTON",
-  rolling: false,
-  gameOver: false,
-  dupe: 2
+  ruleNum: 123, // number displayed on button
+  ruleText: "PRESS THE BUTTON", // text displayed in Rolled box
+  rolling: false, // currently rolling (used mostly for delaying text)
+  gameOver: false, // display something different if the game ends
+  dupe: 2 // keep track of consecutive rolls of the same number
 }
 
+// A list of custom rules set for specific numbers
 const rulesList = [{
     num: 69,
     text: "lock arms and drink"
@@ -27,23 +26,22 @@ const rulesList = [{
     text: "naked mile"
   }
 ]
-
-// const randomRulesBank = ["never have i ever", ""]
-  
+ 
 class App extends Component{
   constructor() {
     super()
     this.state = initialState;
   }
 
-  formatValue = (value) => value.toFixed(0);
+  formatValue = (value) => value.toFixed(0); // formatting the animated number in NumWindow
 
+  //set the text to display based on the rolled number
   setNewText = (newNum) => {
-    var newText = "DRINK"
-    if (newNum === 1) {
+    var newText = "drink"
+    if (newNum === 1) { // game over
       newText = "YOU LOSE, TAKE A SHOT";
     } else {
-      for (var i = 0; i < rulesList.length; i++) {
+      for (var i = 0; i < rulesList.length; i++) {  // loop through custom rules looking for matches
         if (rulesList[i].num === newNum) {
           newText = rulesList[i].text;
         }
@@ -52,15 +50,16 @@ class App extends Component{
     return newText;
   }
 
+  // main game logic, triggered by buttonPress 
   onRoll = (num) => {
-    if (num === 1) {
+    if (num === 1) { // game over, reset state
       this.setState(initialState);
     } else {
-      var newNum = Math.ceil(Math.random() * num);
+      var newNum = Math.ceil(Math.random() * num); // roll a random number
       var newText = this.setNewText(newNum);
-      var stateTimeout = 1000
+      var stateTimeout = 1000 // used to delay text loading (sometimes we don't want a delay)
     
-    
+      // check for duplicate roll and set state accordingly
       if (newNum === num) {
         newText += (" X" + this.state.dupe)
         this.setState({ dupe: (this.state.dupe) + 1 })
@@ -68,12 +67,14 @@ class App extends Component{
       } else {
         this.setState({ dupe: 2 });
       }
-    
+      
+      // always set ruleNum to the rolled Number and rolling to true
       this.setState({
         ruleNum: newNum,
         rolling: true
       })
 
+      // state update that will be delayed stateTimeout seconds
       var newState = {
         ruleText: newText,
         rolling: false,
@@ -102,7 +103,7 @@ class App extends Component{
             <Col><Titlebar /></Col>
           </Row>
           <Row>
-          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} formatValue={this.formatValue} gameOver={gameOver}/></Col>
+          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} formatValue={this.formatValue} gameOver={gameOver} rolling={rolling}/></Col>
           </Row>
           <Row>
             <Col><Rolled text={ruleText} rolling={rolling}/></Col>

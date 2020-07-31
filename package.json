@@ -1,6 +1,6 @@
 {
   "name": "deathroll",
-  "version": "0.2.10",
+  "version": "0.2.13",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",

@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import './fonts/BalooDa2-SemiBold.ttf'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSkull } from '@fortawesome/free-solid-svg-icons'
+import './fonts/BalooDa2-SemiBold.ttf'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 library.add(faSkull)
 
