@@ -6,6 +6,7 @@ import GameCard from './components/GameCard/GameCard';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
+let playerList = []
 // initial values at the start of the game
 const initialState = {
   ruleNum: 123,                   // number displayed on button
@@ -13,7 +14,9 @@ const initialState = {
   rolling: false,                 // currently rolling (used mostly for delaying text)
   gameOver: false,                // display something different if the game ends
   dupe: 2,                        // keep track of consecutive rolls of the same number
-  tab: "rolls"                    // which tab is selected in the lower card
+  tab: "rolls",                   // which tab is selected in the lower card
+  inputName: '',
+  turn: -1
 }
 
 let pastRolls = []
@@ -36,8 +39,6 @@ class App extends Component{
     super()
     this.state = initialState;
   }
-
-  formatValue = (value) => value.toFixed(0); // formatting the animated number in NumWindow
 
   //set the text to display based on the rolled number
   setNewText = (newNum) => {
@@ -79,10 +80,18 @@ class App extends Component{
         rolling: true
       })
 
+      var turn = this.state.turn;
+      if (turn > playerList.length - 1) {
+        turn = 0
+      } else {
+        turn++;
+      }
+      
       // state update that will be delayed stateTimeout seconds
       var newState = {
         ruleText: newText,
         rolling: false,
+        turn: turn
       }
       if (newNum === 1) { // 1 means you lose!
         newState.gameOver = true;
@@ -108,22 +117,34 @@ class App extends Component{
     }
   }
 
+  onNameChange = (event) => {
+    this.setState({inputName: event.target.value})
+  }
+
+  addName = () => {
+    if (this.state.inputName !== '') {
+      playerList.push(this.state.inputName)
+      this.setState({inputName: ''})
+    }
+  }
+
   render() {
-    const { ruleNum, ruleText, rolling, gameOver, tab } = this.state;
+    const { ruleNum, ruleText, rolling, gameOver, tab, inputName, turn } = this.state;
     return (
       <Container className="App">
         <Row>
           <Col><Titlebar /></Col>
         </Row>
         <Row>
-          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} formatValue={this.formatValue} gameOver={gameOver} rolling={rolling}/></Col>
+          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} gameOver={gameOver} playerList={playerList} turn={turn}/></Col>
         </Row>
         <Row>
           <Col><Rolled text={ruleText} rolling={rolling}/></Col>
         </Row>
         <Row>
-          <Col><GameCard tab={tab} onTabChange={this.onTabChange} pastRolls={pastRolls}/></Col>
+          <Col><GameCard tab={tab} onTabChange={this.onTabChange} pastRolls={pastRolls} playerList={playerList} inputName={inputName} addName={this.addName} onNameChange={this.onNameChange}/></Col>
         </Row>
+        
       </Container>
     );
   }

@@ -3,7 +3,7 @@ import Players from '../Players/Players'
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './GameCard.css'
 
-const GameCard = ({tab, onTabChange, pastRolls}) => {
+const GameCard = ({tab, onTabChange, pastRolls, playerList, inputName, addName, onNameChange}) => {
   return (
     <Container>
       <Row className="justify-content-center">
@@ -26,7 +26,7 @@ const GameCard = ({tab, onTabChange, pastRolls}) => {
             <Card.Body className="mb-2 mx-2 pt-2 pastRolls">
               {tab === "rolls" ?
                 <>{pastRolls.map(pastRoll => (<div className="pastRoll" key={pastRoll}>{pastRoll}</div>))}</> :
-                <Players/>
+                <Players playerList={playerList} inputName={inputName} addName={addName} onNameChange={onNameChange}/>
               }
             </Card.Body>
           </Card>
