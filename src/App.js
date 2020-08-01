@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 import Titlebar from './components/Titlebar/Titlebar';
-import Rolled from './components/Rolled/Rolled';
 import BigRedButton from './components/BigRedButton/BigRedButton';
+import Rolled from './components/Rolled/Rolled';
+import GameCard from './components/GameCard/GameCard';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 // initial values at the start of the game
 const initialState = {
-  ruleNum: 123, // number displayed on button
-  ruleText: "PRESS THE BUTTON", // text displayed in Rolled box
-  rolling: false, // currently rolling (used mostly for delaying text)
-  gameOver: false, // display something different if the game ends
-  dupe: 2 // keep track of consecutive rolls of the same number
+  ruleNum: 123,                   // number displayed on button
+  ruleText: "PRESS THE BUTTON",   // text displayed in Rolled box
+  rolling: false,                 // currently rolling (used mostly for delaying text)
+  gameOver: false,                // display something different if the game ends
+  dupe: 2,                        // keep track of consecutive rolls of the same number
+  tab: "rolls"                    // which tab is selected in the lower card
 }
+
+let pastRolls = []
 
 // A list of custom rules set for specific numbers
 const rulesList = [{
@@ -54,6 +58,7 @@ class App extends Component{
   onRoll = (num) => {
     if (num === 1) { // game over, reset state
       this.setState(initialState);
+      pastRolls = []
     } else {
       var newNum = Math.ceil(Math.random() * num); // roll a random number
       var newText = this.setNewText(newNum);
@@ -85,30 +90,41 @@ class App extends Component{
           stateTimeout = 0;
         }
       }
+      let pastRoll = (newNum + ': ' + newText)
     
       var self = this;
-      setTimeout(function () { self.setRolledRule(newState); }, stateTimeout);
+      setTimeout(function () { self.setRolledRule(newState, pastRoll); }, stateTimeout);
     }
   }
 
-  setRolledRule = (newState) => {
+  setRolledRule = (newState, pastRoll) => {
+    pastRolls.unshift(pastRoll)
     this.setState(newState);
   }
 
+  onTabChange = (newTab) => {
+    if (this.state.tab !== newTab) {
+      this.setState({tab: newTab})
+    }
+  }
+
   render() {
-    const { ruleNum, ruleText, rolling, gameOver } = this.state;
+    const { ruleNum, ruleText, rolling, gameOver, tab } = this.state;
     return (
-        <Container className="App">
-          <Row>
-            <Col><Titlebar /></Col>
-          </Row>
-          <Row>
+      <Container className="App">
+        <Row>
+          <Col><Titlebar /></Col>
+        </Row>
+        <Row>
           <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} formatValue={this.formatValue} gameOver={gameOver} rolling={rolling}/></Col>
-          </Row>
-          <Row>
-            <Col><Rolled text={ruleText} rolling={rolling}/></Col>
-          </Row>
-        </Container>
+        </Row>
+        <Row>
+          <Col><Rolled text={ruleText} rolling={rolling}/></Col>
+        </Row>
+        <Row>
+          <Col><GameCard tab={tab} onTabChange={this.onTabChange} pastRolls={pastRolls}/></Col>
+        </Row>
+      </Container>
     );
   }
 }

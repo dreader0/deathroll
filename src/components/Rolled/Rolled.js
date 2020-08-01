@@ -7,7 +7,7 @@ const Rolled = ({text, rolling}) => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col xs={9} lg={6}>
+        <Col xs={10} lg={6}>
           <Card className="mt-4 pt-2 pb-1 rollCard">
             {rolling ?
               <h5 className="rollingIcon rollText"><FontAwesomeIcon icon="skull" /></h5> :

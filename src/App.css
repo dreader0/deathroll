@@ -2,3 +2,7 @@
   text-align: center;
   max-width: 100%;
 }
+
+div {
+  transition: all linear 0.1s;
+}

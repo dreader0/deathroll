@@ -1,0 +1,31 @@
+.gameCard {
+  background-color: #2a2a2a !important;
+  /* height: 5.3rem; */
+  border-width: .2rem !important;
+  border-color: #1a1a1a !important;
+  color: white;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  /* box-shadow: #000000AA 3px 3px 5px !important; */
+}
+
+.pastRolls {
+  height: 10rem;
+  overflow-y: auto;
+  scrollbar-width: 1px;
+  box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+.pastRolls::-webkit-scrollbar {
+  display: none;
+}
+
+.prTab {
+  background-color: #1a1a1a;
+  box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.tabHeader {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
