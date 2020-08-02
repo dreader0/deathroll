@@ -5,20 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import AnimatedNumber from 'animated-number-react';
 
 
-const NumWindow = ({ num, gameOver, playerList, turn }) => {
+const NumWindow = ({formatValue, num, gameOver}) => {
   return (
     <Row className="justify-content-center">
       <Col xs={6}>
         {gameOver ?
-          <h6>Game Over {playerList[turn]}</h6> :
-          playerList.length > 0 ?
-            <h6>{playerList[turn]}</h6> :
+          <h5>Game Over!</h5> :
           <p></p>
         }
         <div  className="rounded px-2 pt-2 pb-1 numWindow">
           {gameOver ?
             <h1 className="skull windowText"><FontAwesomeIcon icon="skull" /></h1> :
-            <h1 className="windowText"> <AnimatedNumber value={num} formatValue={(value) => value.toFixed(0)}/></h1>
+            <h1 className="windowText"> <AnimatedNumber value={num} formatValue={formatValue}/></h1>
           }
         </div>
         {gameOver ?
