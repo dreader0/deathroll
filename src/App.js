@@ -15,8 +15,8 @@ const initialState = {
   gameOver: false,                // display something different if the game ends
   dupe: 2,                        // keep track of consecutive rolls of the same number
   tab: "rolls",                   // which tab is selected in the lower card
-  inputName: '',
-  turn: -1
+  inputName: '',                  // new player input text
+  turn: -1                        // which player's turn is it 
 }
 
 let pastRolls = []
@@ -31,6 +31,9 @@ const rulesList = [{
   },{
     num: 17,
     text: "naked mile"
+  }, {
+    num: 3,
+    text: "whatever"
   }
 ]
  
@@ -74,19 +77,22 @@ class App extends Component{
         this.setState({ dupe: 2 });
       }
       
-      // always set ruleNum to the rolled Number and rolling to true
-      this.setState({
-        ruleNum: newNum,
+      // always set rolling to true, if newNum is 1, update it later
+      var updateNum = {
         rolling: true
-      })
+      }
+      if (newNum !== 1) {
+        updateNum.ruleNum = newNum
+      }
+      this.setState(updateNum)
 
       var turn = this.state.turn;
-      if (turn > playerList.length - 1) {
+      if (turn === playerList.length - 1) {
         turn = 0
       } else {
         turn++;
       }
-      
+
       // state update that will be delayed stateTimeout seconds
       var newState = {
         ruleText: newText,
@@ -95,6 +101,7 @@ class App extends Component{
       }
       if (newNum === 1) { // 1 means you lose!
         newState.gameOver = true;
+        newState.ruleNum = 1;
         if (num === 2) { // don't delay between 2 and 1
           stateTimeout = 0;
         }
