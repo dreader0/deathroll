@@ -3,8 +3,8 @@ import Titlebar from './components/Titlebar/Titlebar';
 import BigRedButton from './components/BigRedButton/BigRedButton';
 import Rolled from './components/Rolled/Rolled';
 import GameCard from './components/GameCard/GameCard';
-import InfoModal from './components/InfoModal/InfoModal'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import InfoModal from './components/InfoModal/InfoModal'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
@@ -124,10 +124,10 @@ class App extends Component{
         <Row>
           <Col><GameCard tab={tab} onTabChange={this.onTabChange} pastRolls={pastRolls}/></Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" /></Col>
           <InfoModal/>
-        </Row>
+        </Row> */}
       </Container>
     );
   } 
