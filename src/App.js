@@ -73,11 +73,14 @@ class App extends Component{
         this.setState({ dupe: 2 });
       }
       
-      // always set ruleNum to the rolled Number and rolling to true
-      this.setState({
-        ruleNum: newNum,
+      // only update num now if its not 1, otherwise do it later
+      var updateNum = {
         rolling: true
-      })
+      }
+      if (newNum !== 1) {
+        updateNum.ruleNum = newNum;
+      }
+      this.setState(updateNum)
 
       // state update that will be delayed stateTimeout seconds
       var newState = {
@@ -86,6 +89,7 @@ class App extends Component{
       }
       if (newNum === 1) { // 1 means you lose!
         newState.gameOver = true;
+        newState.ruleNum = 1;
         if (num === 2) { // don't delay between 2 and 1
           stateTimeout = 0;
         }
