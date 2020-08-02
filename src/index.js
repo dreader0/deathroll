@@ -4,12 +4,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faSkull } from '@fortawesome/free-solid-svg-icons'
+import { faSkull, faWrench } from '@fortawesome/free-solid-svg-icons'
 import './fonts/BalooDa2-SemiBold.ttf'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-library.add(faSkull)
+library.add(faSkull, faWrench)
 
 ReactDOM.render(
   <React.StrictMode>
