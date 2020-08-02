@@ -37,8 +37,6 @@ class App extends Component{
     this.state = initialState;
   }
 
-  formatValue = (value) => value.toFixed(0); // formatting the animated number in NumWindow
-
   //set the text to display based on the rolled number
   setNewText = (newNum) => {
     var newText = "drink"
@@ -116,7 +114,7 @@ class App extends Component{
           <Col><Titlebar /></Col>
         </Row>
         <Row>
-          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} formatValue={this.formatValue} gameOver={gameOver} rolling={rolling}/></Col>
+          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll}  gameOver={gameOver} rolling={rolling}/></Col>
         </Row>
         <Row>
           <Col><Rolled text={ruleText} rolling={rolling}/></Col>
