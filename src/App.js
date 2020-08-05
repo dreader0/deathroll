@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Titlebar from './components/Titlebar/Titlebar';
 import BigRedButton from './components/BigRedButton/BigRedButton';
-import Rolled from './components/Rolled/Rolled';
 import GameCard from './components/GameCard/GameCard';
 // import InfoModal from './components/InfoModal/InfoModal'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,12 +9,11 @@ import './App.css';
 
 // initial values at the start of the game
 const initialState = {
-  ruleNum: 123,                   // number displayed on button
+  ruleNum: 9999,                   // number displayed on button
   ruleText: "PRESS THE BUTTON",   // text displayed in Rolled box
   rolling: false,                 // currently rolling (used mostly for delaying text)
   gameOver: false,                // display something different if the game ends
-  dupe: 2,                        // keep track of consecutive rolls of the same number
-  tab: "rolls"                    // which tab is selected in the lower card
+  dupe: 2                         // keep track of consecutive rolls of the same number
 }
 
 let pastRolls = []
@@ -90,7 +88,12 @@ class App extends Component{
           stateTimeout = 0;
         }
       }
-      let pastRoll = (newNum + ': ' + newText)
+
+      let pastRoll
+      if (!(this.state.ruleNum === initialState.ruleNum && this.state.dupe === initialState.dupe)) {
+        pastRoll = (this.state.ruleNum + ': ' + this.state.ruleText)
+        pastRolls.unshift(pastRoll)
+      }
     
       var self = this;
       setTimeout(function () { self.setRolledRule(newState, pastRoll); }, stateTimeout);
@@ -98,18 +101,12 @@ class App extends Component{
   }
 
   setRolledRule = (newState, pastRoll) => {
-    pastRolls.unshift(pastRoll)
+    
     this.setState(newState);
   }
 
-  onTabChange = (newTab) => {
-    if (this.state.tab !== newTab) {
-      this.setState({tab: newTab})
-    }
-  }
-
   render() {
-    const { ruleNum, ruleText, rolling, gameOver, tab } = this.state;
+    const { ruleNum, ruleText, rolling, gameOver } = this.state;
     return (
       <Container className="App">
         <Row>
@@ -119,10 +116,7 @@ class App extends Component{
           <Col><BigRedButton num={ruleNum} onRoll={this.onRoll}  gameOver={gameOver} rolling={rolling}/></Col>
         </Row>
         <Row>
-          <Col><Rolled text={ruleText} rolling={rolling}/></Col>
-        </Row>
-        <Row>
-          <Col><GameCard tab={tab} onTabChange={this.onTabChange} pastRolls={pastRolls}/></Col>
+          <Col><GameCard text={ruleText} rolling={rolling} pastRolls={pastRolls}/></Col>
         </Row>
         {/* <Row>
           <Col className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" /></Col>

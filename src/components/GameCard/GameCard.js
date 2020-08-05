@@ -1,33 +1,20 @@
 import React from 'react';
-import Players from '../Players/Players'
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
 import './GameCard.css'
 
-const GameCard = ({tab, onTabChange, pastRolls}) => {
+const GameCard = ({text, rolling, pastRolls}) => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col xs={10} lg={6} className="mt-2">
+        <Col xs={10} lg={6} className="mt-5">
           <Card className="text-center gameCard">
             <Row className="m-1 tabHeader">
-                <Col className="p-1" xs={6} onClick={() => onTabChange("rolls")}>
-                  {tab === "rolls" ?
-                    <div className="p-1 rounded prTab">past rolls</div> :
-                    <div className="p-1">past rolls</div>
-                  }
-                </Col>
-                <Col className="p-1" xs={6} onClick={() => onTabChange("players")}>
-                  {tab === "players" ?
-                    <div className="p-1 rounded prTab">players</div> :
-                    <div className="p-1">players</div>
-                  }
+                <Col className="p-1">
+                  <div className="py-2 rounded prTab rollingIcon">{rolling ? <Spinner animation="border" variant="secondary"/>: text}</div>
                 </Col>
               </Row> 
             <Card.Body className="mb-2 mx-2 pt-2 pastRolls">
-              {tab === "rolls" ?
-                <>{pastRolls.map(pastRoll => (<div className="pastRoll" key={pastRoll}>{pastRoll}</div>))}</> :
-                <Players/>
-              }
+              <>{pastRolls.map(pastRoll => (<div className="pastRoll" key={pastRoll}>{pastRoll}</div>))}</>
             </Card.Body>
           </Card>
         </Col>
