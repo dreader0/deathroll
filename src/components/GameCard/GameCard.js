@@ -9,8 +9,8 @@ const GameCard = ({text, rolling, pastRolls}) => {
         <Col xs={10} lg={6} className="mt-5">
           <Card className="text-center gameCard">
             <Row className="m-1 tabHeader">
-                <Col className="p-1">
-                  <div className="py-2 rounded prTab rollingIcon">{rolling ? <Spinner animation="border" variant="secondary"/>: text}</div>
+              <Col className="p-1">
+                  <h5 className="py-2 rounded prTab rollingIcon">{rolling ? <Spinner animation="border" variant="secondary"/>: text}</h5>
                 </Col>
               </Row> 
             <Card.Body className="mb-2 mx-2 pt-2 pastRolls">
@@ -23,4 +23,4 @@ const GameCard = ({text, rolling, pastRolls}) => {
   );
 }
 
-export default GameCard;
+export default GameCard; 

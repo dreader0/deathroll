@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Titlebar from './components/Titlebar/Titlebar';
 import BigRedButton from './components/BigRedButton/BigRedButton';
 import GameCard from './components/GameCard/GameCard';
+import rules from './ruleLists/rules.json'
+import randomRules from './ruleLists/randomRules.json'
 // import InfoModal from './components/InfoModal/InfoModal'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -19,17 +21,13 @@ const initialState = {
 let pastRolls = []
 
 // A list of custom rules set for specific numbers
-const rulesList = [{
-    num: 69,
-    text: "lock arms and drink"
-  },{
-    num: 420,
-    text: "blaze it"
-  },{
-    num: 17,
-    text: "naked mile"
-  }
-]
+const rulesList = rules.map((rule) => {
+  return rule;
+})
+
+const randomRulesList = randomRules.map((rule) => {
+  return rule;
+})
  
 class App extends Component{
   constructor() {
@@ -39,7 +37,7 @@ class App extends Component{
 
   //set the text to display based on the rolled number
   setNewText = (newNum) => {
-    var newText = "drink"
+    var newText = randomRulesList[Math.ceil(Math.random() * randomRulesList.length)].text
     if (newNum === 1) { // game over
       newText = "YOU LOSE, TAKE A SHOT";
     } else {
@@ -54,6 +52,7 @@ class App extends Component{
 
   // main game logic, triggered by buttonPress 
   onRoll = (num) => {
+    console.log(rulesList)
     if (num === 1) { // game over, reset state
       this.setState(initialState);
       pastRolls = []
