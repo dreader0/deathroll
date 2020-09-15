@@ -25,7 +25,7 @@ const rulesList = rules.map((rule) => {
   return rule;
 })
 
-const randomRulesList = randomRules.map((rule) => {
+const randomRulesList = randomRules.rules.map((rule) => {
   return rule;
 })
  
@@ -37,7 +37,7 @@ class App extends Component{
 
   //set the text to display based on the rolled number
   setNewText = (newNum) => {
-    var newText = randomRulesList[Math.ceil(Math.random() * randomRulesList.length)].text
+    var newText = randomRulesList[Math.ceil(Math.random() * (randomRulesList.length - 1))].text
     if (newNum === 1) { // game over
       newText = "YOU LOSE, TAKE A SHOT";
     } else {
