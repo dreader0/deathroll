@@ -1,47 +1,47 @@
 import React, {Component} from 'react';
 import Titlebar from './components/Titlebar/Titlebar';
 import BigRedButton from './components/BigRedButton/BigRedButton';
-import Rolled from './components/Rolled/Rolled';
 import GameCard from './components/GameCard/GameCard';
+import rules from './ruleLists/rules.json'
+import randomRules from './ruleLists/randomRules.json'
+import pkg from '../package.json'
+// import InfoModal from './components/InfoModal/InfoModal'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 // initial values at the start of the game
 const initialState = {
-  ruleNum: 123,                   // number displayed on button
+  ruleNum: 9999,                   // number displayed on button
   ruleText: "PRESS THE BUTTON",   // text displayed in Rolled box
   rolling: false,                 // currently rolling (used mostly for delaying text)
   gameOver: false,                // display something different if the game ends
-  dupe: 2,                        // keep track of consecutive rolls of the same number
-  tab: "rolls"                    // which tab is selected in the lower card
+  dupe: 2                         // keep track of consecutive rolls of the same number
 }
 
 let pastRolls = []
 
+const version = pkg.version;
+
 // A list of custom rules set for specific numbers
-const rulesList = [{
-    num: 69,
-    text: "lock arms and drink"
-  },{
-    num: 420,
-    text: "blaze it"
-  },{
-    num: 17,
-    text: "naked mile"
-  }
-]
+const rulesList = rules.map((rule) => {
+  return rule;
+})
+
+const randomRulesList = randomRules.rules.map((rule) => {
+  return rule;
+})
  
 class App extends Component{
   constructor() {
     super()
     this.state = initialState;
+    console.log(version);
   }
-
-  formatValue = (value) => value.toFixed(0); // formatting the animated number in NumWindow
 
   //set the text to display based on the rolled number
   setNewText = (newNum) => {
-    var newText = "drink"
+    var newText = randomRulesList[Math.ceil(Math.random() * (randomRulesList.length - 1))].text
     if (newNum === 1) { // game over
       newText = "YOU LOSE, TAKE A SHOT";
     } else {
@@ -56,6 +56,7 @@ class App extends Component{
 
   // main game logic, triggered by buttonPress 
   onRoll = (num) => {
+    console.log(rulesList)
     if (num === 1) { // game over, reset state
       this.setState(initialState);
       pastRolls = []
@@ -94,7 +95,12 @@ class App extends Component{
           stateTimeout = 0;
         }
       }
-      let pastRoll = (newNum + ': ' + newText)
+
+      let pastRoll
+      if (!(this.state.ruleNum === initialState.ruleNum && this.state.dupe === initialState.dupe)) {
+        pastRoll = (this.state.ruleNum + ': ' + this.state.ruleText)
+        pastRolls.unshift(pastRoll)
+      }
     
       var self = this;
       setTimeout(function () { self.setRolledRule(newState, pastRoll); }, stateTimeout);
@@ -102,35 +108,34 @@ class App extends Component{
   }
 
   setRolledRule = (newState, pastRoll) => {
-    pastRolls.unshift(pastRoll)
+    
     this.setState(newState);
   }
 
-  onTabChange = (newTab) => {
-    if (this.state.tab !== newTab) {
-      this.setState({tab: newTab})
-    }
-  }
-
   render() {
-    const { ruleNum, ruleText, rolling, gameOver, tab } = this.state;
+    const { ruleNum, ruleText, rolling, gameOver } = this.state;
     return (
       <Container className="App">
         <Row>
           <Col><Titlebar /></Col>
         </Row>
         <Row>
-          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} formatValue={this.formatValue} gameOver={gameOver} rolling={rolling}/></Col>
+          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll}  gameOver={gameOver} rolling={rolling}/></Col>
         </Row>
         <Row>
-          <Col><Rolled text={ruleText} rolling={rolling}/></Col>
+          <Col><GameCard text={ruleText} rolling={rolling} pastRolls={pastRolls}/></Col>
         </Row>
+        {/* <Row>
+          <Col className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" /></Col>
+          <InfoModal/>
+        </Row> */}
         <Row>
-          <Col><GameCard tab={tab} onTabChange={this.onTabChange} pastRolls={pastRolls}/></Col>
+          <Col>
+            <h4 className="mt-3" style={{ color: '#F3F3F3', textShadow: '#000000AA -1px 2px' }}>v{version}</h4></Col>
         </Row>
       </Container>
     );
-  }
+  } 
 }
 
 export default App;

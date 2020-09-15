@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import AnimatedNumber from 'animated-number-react';
 
 
-const NumWindow = ({formatValue, num, gameOver}) => {
+const NumWindow = ({ num, gameOver}) => {
   return (
     <Row className="justify-content-center">
       <Col xs={6}>
@@ -16,7 +16,7 @@ const NumWindow = ({formatValue, num, gameOver}) => {
         <div  className="rounded px-2 pt-2 pb-1 numWindow">
           {gameOver ?
             <h1 className="skull windowText"><FontAwesomeIcon icon="skull" /></h1> :
-            <h1 className="windowText"> <AnimatedNumber value={num} formatValue={formatValue}/></h1>
+            <h1 className="windowText"> <AnimatedNumber value={num} formatValue={(value) => value.toFixed(0)}/></h1>
           }
         </div>
         {gameOver ?
