@@ -4,6 +4,7 @@ import BigRedButton from './components/BigRedButton/BigRedButton';
 import GameCard from './components/GameCard/GameCard';
 import rules from './ruleLists/rules.json'
 import randomRules from './ruleLists/randomRules.json'
+import pkg from '../package.json'
 // import InfoModal from './components/InfoModal/InfoModal'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -20,6 +21,8 @@ const initialState = {
 
 let pastRolls = []
 
+const version = pkg.version;
+
 // A list of custom rules set for specific numbers
 const rulesList = rules.map((rule) => {
   return rule;
@@ -33,6 +36,7 @@ class App extends Component{
   constructor() {
     super()
     this.state = initialState;
+    console.log(version);
   }
 
   //set the text to display based on the rolled number
@@ -123,7 +127,7 @@ class App extends Component{
         </Row> */}
         <Row>
           <Col>
-          <h3 className="mt-3" style={{color : '#F3F3F3', textShadow: '#000000AA -1px 2px'}}>v0.5.3</h3></Col>
+            <h4 className="mt-3" style={{ color: '#F3F3F3', textShadow: '#000000AA -1px 2px' }}>v{version}</h4></Col>
         </Row>
       </Container>
     );
