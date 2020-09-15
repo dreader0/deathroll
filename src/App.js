@@ -121,6 +121,10 @@ class App extends Component{
           <Col className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" /></Col>
           <InfoModal/>
         </Row> */}
+        <Row>
+          <Col>
+          <h3 className="mt-5" style={{color : '#F3F3F3', textShadow: '#000000AA -1px 2px'}}>v0.5.0</h3></Col>
+        </Row>
       </Container>
     );
   } 
