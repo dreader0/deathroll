@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6014b4a1d2286bcd48861a4fca3da3b3",
+    "revision": "e96b70dafec02397e16a53982fca60ea",
     "url": "/deathroll/index.html"
   },
   {
-    "revision": "e0aebb4ed1d1fcda272c",
+    "revision": "5dd35bcb8e8554806be8",
     "url": "/deathroll/static/css/2.43079d8c.chunk.css"
   },
   {
-    "revision": "beff99e6dfce0a878204",
+    "revision": "832312d06f8142080feb",
     "url": "/deathroll/static/css/main.ebc79e31.chunk.css"
   },
   {
-    "revision": "e0aebb4ed1d1fcda272c",
-    "url": "/deathroll/static/js/2.e3eb01be.chunk.js"
+    "revision": "5dd35bcb8e8554806be8",
+    "url": "/deathroll/static/js/2.c8cef545.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/deathroll/static/js/2.e3eb01be.chunk.js.LICENSE.txt"
+    "url": "/deathroll/static/js/2.c8cef545.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "beff99e6dfce0a878204",
-    "url": "/deathroll/static/js/main.3b54a9e8.chunk.js"
+    "revision": "832312d06f8142080feb",
+    "url": "/deathroll/static/js/main.bb57195b.chunk.js"
   },
   {
     "revision": "eb842f4660ef6c8673ab",
