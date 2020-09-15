@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/deathroll/precache-manifest.377da125f8dceb19dafd13423c762101.js"
+  "/deathroll/precache-manifest.a12544e889191f5f7e6c179d9d32ef44.js"
 );
 
 self.addEventListener('message', (event) => {
