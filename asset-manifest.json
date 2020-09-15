@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/deathroll/static/css/main.ebc79e31.chunk.css",
-    "main.js": "/deathroll/static/js/main.a46a1556.chunk.js",
-    "main.js.map": "/deathroll/static/js/main.a46a1556.chunk.js.map",
+    "main.js": "/deathroll/static/js/main.edb1af19.chunk.js",
+    "main.js.map": "/deathroll/static/js/main.edb1af19.chunk.js.map",
     "runtime-main.js": "/deathroll/static/js/runtime-main.5e03fe8d.js",
     "runtime-main.js.map": "/deathroll/static/js/runtime-main.5e03fe8d.js.map",
     "static/css/2.43079d8c.chunk.css": "/deathroll/static/css/2.43079d8c.chunk.css",
     "static/js/2.e3eb01be.chunk.js": "/deathroll/static/js/2.e3eb01be.chunk.js",
     "static/js/2.e3eb01be.chunk.js.map": "/deathroll/static/js/2.e3eb01be.chunk.js.map",
     "index.html": "/deathroll/index.html",
-    "precache-manifest.a12544e889191f5f7e6c179d9d32ef44.js": "/deathroll/precache-manifest.a12544e889191f5f7e6c179d9d32ef44.js",
+    "precache-manifest.e5b9123be925a36c4536274f312d52d5.js": "/deathroll/precache-manifest.e5b9123be925a36c4536274f312d52d5.js",
     "service-worker.js": "/deathroll/service-worker.js",
     "static/css/2.43079d8c.chunk.css.map": "/deathroll/static/css/2.43079d8c.chunk.css.map",
     "static/css/main.ebc79e31.chunk.css.map": "/deathroll/static/css/main.ebc79e31.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.43079d8c.chunk.css",
     "static/js/2.e3eb01be.chunk.js",
     "static/css/main.ebc79e31.chunk.css",
-    "static/js/main.a46a1556.chunk.js"
+    "static/js/main.edb1af19.chunk.js"
   ]
 }
