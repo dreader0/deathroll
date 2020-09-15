@@ -2,7 +2,7 @@
   "name": "deathroll",
   "version": "0.4.4",
   "private": true,
-  "homepage": "http://dreader0.github.io/deathroll",
+  "homepage": "https://dreader0.github.io/deathroll",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
