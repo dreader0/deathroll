@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "82e513ebc3de82d3cb5c7edd8be8a41c",
+    "revision": "6014b4a1d2286bcd48861a4fca3da3b3",
     "url": "/deathroll/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/deathroll/static/css/2.43079d8c.chunk.css"
   },
   {
-    "revision": "b923573e6fc6d5910f9d",
+    "revision": "beff99e6dfce0a878204",
     "url": "/deathroll/static/css/main.ebc79e31.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/deathroll/static/js/2.e3eb01be.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b923573e6fc6d5910f9d",
-    "url": "/deathroll/static/js/main.edb1af19.chunk.js"
+    "revision": "beff99e6dfce0a878204",
+    "url": "/deathroll/static/js/main.3b54a9e8.chunk.js"
   },
   {
     "revision": "eb842f4660ef6c8673ab",
