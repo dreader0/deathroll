@@ -22,8 +22,3 @@ We want to implement more features as soon as possible:
   - Players
   - Multiple rulesets
   - & More!
-
-## Who are we?
-
- Dan, Jer, and Jaime: three roommates who like to drink and play games.
- Dan handles the techy shit while Jer and Jaime contribute rules and some extra creativity. 
