@@ -1,120 +1,76 @@
 {
   "rules": [{
-    "text": "make someone drink"
+    "text": "make someone drink",
+    "rarity": 1
   }, {
-    "text": "take a big drink"
+    "text": "guys drink",
+    "rarity": 1
   }, {
-    "text": "guys drink"
+    "text": "girls drink",
+    "rarity": 1
   }, {
-    "text": "girls drink"
+    "text": "non-binary people drink",
+    "rarity": 1
+  },{
+    "text": "everyone drink",
+    "rarity": 1
   }, {
-    "text": "everyone drink"
+    "text": "drink twice",
+    "rarity": 1
   }, {
-    "text": "drink twice"
+    "text": "drink with a friend",
+    "rarity": 1
   }, {
-    "text": "drink with a friend"
+    "text": "pick a drinking buddy",
+    "rarity": 1
   }, {
-    "text": "pick a mate to always drink with"
+    "text": "taller than 5'8\" drink",
+    "rarity": 1
   }, {
-    "text": "drink if you're taller than 5'8\""
+    "text": "shorter than 5'6\" drink",
+    "rarity": 1
   }, {
-    "text": "drink if you're shorter than 5'6\""
+    "text": "sock-sporting players drink",
+    "rarity": 1
   }, {
-    "text": "drink if you're wearing socks"
+    "text": "never have i ever",
+    "rarity": 1
   }, {
-    "text": "never have i ever"
+    "text": "take a shot",
+    "rarity": 1
   }, {
-    "text": "take a shot"
+    "text": "brown eyes drink",
+    "rarity": 1
   }, {
-    "text": "truth or drink"
+    "text": "blue eyes drink",
+    "rarity": 1
   }, {
-    "text": "brown eyes drink"
+    "text": "hazel eyes drink",
+    "rarity": 1
   }, {
-    "text": "blue eyes drink"
+    "text": "blondes drink",
+    "rarity": 1
   }, {
-    "text": "hazel eyes drink"
+    "text": "brunettes drink",
+    "rarity": 1
   }, {
-    "text": "blondes drink"
+    "text": "redheads drink",
+    "rarity": 1
   }, {
-    "text": "brunettes drink"
+    "text": "youngest drinks",
+    "rarity": 1
   }, {
-    "text": "redheads drink"
+    "text": "oldest drinks",
+    "rarity": 1
   }, {
-    "text": "shotgun"
+    "text": "make a rule",
+    "rarity": 1
   }, {
-    "text": "youngest drinks"
-  }, {
-    "text": "oldest drinks"
-  }, {
-    "text": "finish your drink"
-  }, {
-    "text": "make a rule"
-  }, {
+    "text": "hands up",
+    "rarity": 1
+  },{
     "text": "spelling bee",
+    "rarity": 1,
     "tip": "give someone a word to spell and if they screw it up, they drink."
-  }, {
-    "text": "drink"
-  }, {
-    "text": "make someone drink"
-  }, {
-    "text": "take a big drink"
-  }, {
-    "text": "guys drink"
-  }, {
-    "text": "girls drink"
-  }, {
-    "text": "everyone drink"
-  }, {
-    "text": "drink twice"
-  }, {
-    "text": "drink with a friend"
-  }, {
-    "text": "drink"
-  }, {
-    "text": "make someone drink"
-  }, {
-    "text": "take a big drink"
-  }, {
-    "text": "guys drink"
-  }, {
-    "text": "girls drink"
-  }, {
-    "text": "everyone drink"
-  }, {
-    "text": "drink twice"
-  }, {
-    "text": "drink with a friend"
-  }, {
-    "text": "drink"
-  }, {
-    "text": "make someone drink"
-  }, {
-    "text": "take a big drink"
-  }, {
-    "text": "guys drink"
-  }, {
-    "text": "girls drink"
-  }, {
-    "text": "everyone drink"
-  }, {
-    "text": "drink twice"
-  }, {
-    "text": "drink with a friend"
-  }, {
-    "text": "drink"
-  }, {
-    "text": "make someone drink"
-  }, {
-    "text": "take a big drink"
-  }, {
-    "text": "guys drink"
-  }, {
-    "text": "girls drink"
-  }, {
-    "text": "everyone drink"
-  }, {
-    "text": "drink twice"
-  }, {
-    "text": "drink with a friend"
   }]
 }

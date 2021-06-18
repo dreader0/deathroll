@@ -1,13 +1,19 @@
 body {
   margin: 0;
-  background-color: #202020;
-  background-image: url('./backgrounds/concreteWall.png');
-  background-repeat: repeat;
-  font-family: BalooDa2-SemiBold, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  background-color: #121212;
+  /* background-image: url('./backgrounds/concreteWall.png'); */
+  /* background-repeat: repeat; */
+  font-family: Montserrat-SemiBold, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-family: Montserrat-SemiBold, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 code {
@@ -16,6 +22,6 @@ code {
 }
 
 @font-face {
-  font-family: 'BalooDa2-SemiBold';
-  src: local('BalooDa2-SemiBold'), url(./fonts/BalooDa2-SemiBold.ttf) format('ttf');
+  font-family: 'Montserrat-SemiBold';
+  src: local('Montserrat-SemiBold'), url(./fonts/Montserrat/Montserrat-SemiBold.ttf) format('ttf');
 }
