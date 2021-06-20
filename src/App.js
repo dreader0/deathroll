@@ -5,8 +5,8 @@ import GameCard from './components/GameCard/GameCard';
 import rules from './ruleLists/rules.json'
 import randomRules from './ruleLists/randomRules.json'
 import pkg from '../package.json'
-// import InfoModal from './components/InfoModal/InfoModal'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import InfoModal from './components/InfoModal/InfoModal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
@@ -16,7 +16,8 @@ const initialState = {
   ruleText: "PRESS THE BUTTON",   // text displayed in Rolled box
   rolling: false,                 // currently rolling (used mostly for delaying text)
   gameOver: false,                // display something different if the game ends
-  dupe: 2                         // keep track of consecutive rolls of the same number
+  dupe: 2,                         // keep track of consecutive rolls of the same number
+  showModal: false
 }
 
 let pastRolls = []
@@ -112,8 +113,16 @@ class App extends Component{
     this.setState(newState);
   }
 
+  handleShow = () => {
+    this.setState({showModal: true})
+  }
+
+  handleClose = () => {
+    this.setState({showModal: false})
+  }
+
   render() {
-    const { ruleNum, ruleText, rolling, gameOver } = this.state;
+    const { ruleNum, ruleText, rolling, gameOver, showModal } = this.state;
     return (
       <Container className="App">
         <Row>
@@ -125,14 +134,14 @@ class App extends Component{
         <Row>
           <Col><GameCard text={ruleText} rolling={rolling} pastRolls={pastRolls}/></Col>
         </Row>
-        {/* <Row>
-          <Col className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" /></Col>
-          <InfoModal/>
-        </Row> */}
         <Row>
+          <Col style={{cursor: "pointer"}} className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" onClick={this.handleShow}/></Col>
+          <InfoModal showModal={showModal} handleClose={this.handleClose}/>
+        </Row>
+        {/* <Row>
           <Col>
             <h4 className="mt-3" style={{ color: '#F3F3F3', textShadow: '#000000AA -1px 2px' }}>v{version}</h4></Col>
-        </Row>
+        </Row> */}
       </Container>
     );
   } 

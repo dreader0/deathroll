@@ -1,5 +1,6 @@
 .gameCard {
-  background-color: #2a2a2a !important;
+  background-color: rgba(255, 255, 255, .05) !important;
+  /* background-color: #2a2a2a !important; */
   /* height: 5.3rem; */
   border-width: .2rem !important;
   border-color: #1a1a1a !important;

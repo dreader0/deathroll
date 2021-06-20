@@ -2,28 +2,25 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap'
 import './InfoModal.css'
 
-const InfoModal = ({modalShow, onHide}) => {
+const InfoModal = ({showModal, handleClose}) => {
   return (
     <Modal
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      show={showModal}
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          deathroll v0.5.6
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <h4>How to play</h4>
+        <p>Press the Big Red Button</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={() => {onHide()}}>Close</Button>
+        <Button onClick={() => {handleClose()}}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

@@ -9,9 +9,6 @@
     "text": "girls drink",
     "rarity": 1
   }, {
-    "text": "non-binary people drink",
-    "rarity": 1
-  },{
     "text": "everyone drink",
     "rarity": 1
   }, {
@@ -30,7 +27,7 @@
     "text": "shorter than 5'6\" drink",
     "rarity": 1
   }, {
-    "text": "sock-sporting players drink",
+    "text": "players with matching socks drink",
     "rarity": 1
   }, {
     "text": "never have i ever",
@@ -63,12 +60,15 @@
     "text": "oldest drinks",
     "rarity": 1
   }, {
-    "text": "make a rule",
+    "text": "hands up - last one drinks",
     "rarity": 1
   }, {
-    "text": "hands up",
+    "text": "single players drink",
     "rarity": 1
-  },{
+  }, {
+    "text": "non single players drink",
+    "rarity": 1
+  }, {
     "text": "spelling bee",
     "rarity": 1,
     "tip": "give someone a word to spell and if they screw it up, they drink."
