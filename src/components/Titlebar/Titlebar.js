@@ -7,7 +7,7 @@ const TitleBar = () => {
     <Container>
       <Row>
         <Col>
-          <h2 className="mt-3" style={{ color: '#F3F3F3', textShadow: '#000000AA -1px 2px'}}>deathroll</h2>
+          <h2 className="mt-3 background" style={{ color: '#F3F3F3', textShadow: '#000000AA -1px 2px'}}>deathroll</h2>
         </Col>
       </Row>
     </Container>

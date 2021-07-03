@@ -22,29 +22,46 @@ const initialState = {
 
 let pastRolls = []
 
-const version = pkg.version;
-
 // A list of custom rules set for specific numbers
 const rulesList = rules.map((rule) => {
   return rule;
 })
 
-const randomRulesList = randomRules.rules.map((rule) => {
-  return rule;
-})
+// const randomRulesList = randomRules.rules.map((rule) => {
+//   return rule;
+// })
+
+let randomRulesList = []
  
 class App extends Component{
   constructor() {
     super()
     this.state = initialState;
-    console.log(version);
+    // console.log(this.version);
+  }
+
+  componentDidMount() {
+    this.randomRules = this.mapRandomRules();
+    this.version = pkg.version;
+    console.log(this.version)
+  }
+
+  mapRandomRules = () => {
+    for (let i = 0; i < randomRules.rules.length; i++) {
+      let frequency = randomRules.rules[i].frequency;
+      // console.log(frequency);
+      for (let j=0; j < frequency; j++) {
+        randomRulesList.push(randomRules.rules[i]);
+      }
+    }
+    // console.log(randomRulesList);
   }
 
   //set the text to display based on the rolled number
   setNewText = (newNum) => {
     var newText = randomRulesList[Math.ceil(Math.random() * (randomRulesList.length - 1))].text
     if (newNum === 1) { // game over
-      newText = "YOU LOSE, TAKE A SHOT";
+      newText = "YOU LOSE!";
     } else {
       for (var i = 0; i < rulesList.length; i++) {  // loop through custom rules looking for matches
         if (rulesList[i].num === newNum) {
@@ -125,19 +142,20 @@ class App extends Component{
     const { ruleNum, ruleText, rolling, gameOver, showModal } = this.state;
     return (
       <Container className="App">
-        <Row>
-          <Col><Titlebar /></Col>
-        </Row>
-        <Row>
-          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll}  gameOver={gameOver} rolling={rolling}/></Col>
-        </Row>
-        <Row>
-          <Col><GameCard text={ruleText} rolling={rolling} pastRolls={pastRolls}/></Col>
-        </Row>
-        <Row>
-          <Col style={{cursor: "pointer"}} className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" onClick={this.handleShow}/></Col>
-          <InfoModal showModal={showModal} handleClose={this.handleClose}/>
-        </Row>
+          <Row>
+            <Col><Titlebar /></Col>
+          </Row>
+          <Row>
+            <Col><BigRedButton num={ruleNum} onRoll={this.onRoll}  gameOver={gameOver} rolling={rolling}/></Col>
+          </Row>
+          <Row>
+            <Col><GameCard text={ruleText} rolling={rolling} pastRolls={pastRolls}/></Col>
+          </Row>
+          <Row>
+            <Col style={{cursor: "pointer"}} className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" onClick={this.handleShow}/></Col>
+            <InfoModal version={this.version} showModal={showModal} handleClose={this.handleClose}/>
+          </Row>
+        
         {/* <Row>
           <Col>
             <h4 className="mt-3" style={{ color: '#F3F3F3', textShadow: '#000000AA -1px 2px' }}>v{version}</h4></Col>

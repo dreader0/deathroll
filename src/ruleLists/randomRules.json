@@ -1,76 +1,75 @@
 {
   "rules": [{
+    "text": "drink",
+    "frequency": 3
+  },{
     "text": "make someone drink",
-    "rarity": 1
+    "frequency": 3
   }, {
     "text": "guys drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "girls drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "everyone drink",
-    "rarity": 1
+    "frequency": 2
   }, {
     "text": "drink twice",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "drink with a friend",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "pick a drinking buddy",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "taller than 5'8\" drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "shorter than 5'6\" drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "players with matching socks drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "never have i ever",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "take a shot",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "brown eyes drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "blue eyes drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "hazel eyes drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "blondes drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "brunettes drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "redheads drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "youngest drinks",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "oldest drinks",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "hands up - last one drinks",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "single players drink",
-    "rarity": 1
+    "frequency": 1
   }, {
     "text": "non single players drink",
-    "rarity": 1
-  }, {
-    "text": "spelling bee",
-    "rarity": 1,
-    "tip": "give someone a word to spell and if they screw it up, they drink."
+    "frequency": 1
   }]
 }
