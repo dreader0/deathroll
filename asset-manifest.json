@@ -1,26 +1,25 @@
 {
   "files": {
-    "main.css": "/deathroll/static/css/main.ebc79e31.chunk.css",
-    "main.js": "/deathroll/static/js/main.bb57195b.chunk.js",
-    "main.js.map": "/deathroll/static/js/main.bb57195b.chunk.js.map",
-    "runtime-main.js": "/deathroll/static/js/runtime-main.5e03fe8d.js",
-    "runtime-main.js.map": "/deathroll/static/js/runtime-main.5e03fe8d.js.map",
-    "static/css/2.43079d8c.chunk.css": "/deathroll/static/css/2.43079d8c.chunk.css",
-    "static/js/2.c8cef545.chunk.js": "/deathroll/static/js/2.c8cef545.chunk.js",
-    "static/js/2.c8cef545.chunk.js.map": "/deathroll/static/js/2.c8cef545.chunk.js.map",
+    "main.css": "/deathroll/static/css/main.57b302cd.chunk.css",
+    "main.js": "/deathroll/static/js/main.f5ac3958.chunk.js",
+    "main.js.map": "/deathroll/static/js/main.f5ac3958.chunk.js.map",
+    "runtime-main.js": "/deathroll/static/js/runtime-main.3219e4fe.js",
+    "runtime-main.js.map": "/deathroll/static/js/runtime-main.3219e4fe.js.map",
+    "static/css/2.86846cc5.chunk.css": "/deathroll/static/css/2.86846cc5.chunk.css",
+    "static/js/2.5fbf1dcc.chunk.js": "/deathroll/static/js/2.5fbf1dcc.chunk.js",
+    "static/js/2.5fbf1dcc.chunk.js.map": "/deathroll/static/js/2.5fbf1dcc.chunk.js.map",
     "index.html": "/deathroll/index.html",
-    "precache-manifest.96ba36af909a7c2c5044d40fa0cf778b.js": "/deathroll/precache-manifest.96ba36af909a7c2c5044d40fa0cf778b.js",
-    "service-worker.js": "/deathroll/service-worker.js",
-    "static/css/2.43079d8c.chunk.css.map": "/deathroll/static/css/2.43079d8c.chunk.css.map",
-    "static/css/main.ebc79e31.chunk.css.map": "/deathroll/static/css/main.ebc79e31.chunk.css.map",
-    "static/js/2.c8cef545.chunk.js.LICENSE.txt": "/deathroll/static/js/2.c8cef545.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/deathroll/static/media/concreteWall.7c26c2a7.png"
+    "static/css/2.86846cc5.chunk.css.map": "/deathroll/static/css/2.86846cc5.chunk.css.map",
+    "static/css/main.57b302cd.chunk.css.map": "/deathroll/static/css/main.57b302cd.chunk.css.map",
+    "static/js/2.5fbf1dcc.chunk.js.LICENSE.txt": "/deathroll/static/js/2.5fbf1dcc.chunk.js.LICENSE.txt",
+    "static/media/BalooDa2-SemiBold.7dacce5d.ttf": "/deathroll/static/media/BalooDa2-SemiBold.7dacce5d.ttf",
+    "static/media/index.css": "/deathroll/static/media/Montserrat-SemiBold.fa8441f3.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.5e03fe8d.js",
-    "static/css/2.43079d8c.chunk.css",
-    "static/js/2.c8cef545.chunk.js",
-    "static/css/main.ebc79e31.chunk.css",
-    "static/js/main.bb57195b.chunk.js"
+    "static/js/runtime-main.3219e4fe.js",
+    "static/css/2.86846cc5.chunk.css",
+    "static/js/2.5fbf1dcc.chunk.js",
+    "static/css/main.57b302cd.chunk.css",
+    "static/js/main.f5ac3958.chunk.js"
   ]
 }
