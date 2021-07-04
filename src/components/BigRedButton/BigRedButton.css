@@ -1,7 +1,13 @@
 .bigButton {
   background-color: #8d0000 !important;
-  border-width: .4rem !important;
   border-color: #750000 !important;
+
+  /* light theme */
+  /* background-color: #FF0000 !important;
+  border-color: #EE0000 !important; */
+  /* light theme ^ */
+
+  border-width: .4rem !important;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2) !important;
   /* box-shadow: #000000AA 5px 5px 5px !important; */
 }

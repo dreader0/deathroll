@@ -1,5 +1,8 @@
 .numWindow {
   background-color: #750000;
+
+  /* background-color: #DD0000; */
+
   box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 

@@ -43,7 +43,7 @@ class App extends Component{
   componentDidMount() {
     this.randomRules = this.mapRandomRules();
     this.version = pkg.version;
-    console.log(this.version)
+    // console.log(this.version)
   }
 
   mapRandomRules = () => {
@@ -74,7 +74,7 @@ class App extends Component{
 
   // main game logic, triggered by buttonPress 
   onRoll = (num) => {
-    console.log(rulesList)
+    // console.log(rulesList)
     if (num === 1) { // game over, reset state
       this.setState(initialState);
       pastRolls = []
