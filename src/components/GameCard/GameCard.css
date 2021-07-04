@@ -8,7 +8,6 @@
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
   /* box-shadow: #000000AA 3px 3px 5px !important; */
   height: 20vh;
-  text-align: center;
 }
 
 .pastRolls {
@@ -38,4 +37,16 @@
 .rollingIcon {
   transition: all linear 1s;
   transform: rotateX(360deg);
+}
+
+.ruleText {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .05);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  color: #F3F3F3;
+  text-shadow: #000000AA -1px 2px;
+  border-radius: .8rem;
 }

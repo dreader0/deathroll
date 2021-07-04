@@ -71,5 +71,8 @@
   }, {
     "text": "non single players drink",
     "frequency": 1
+  }, {
+    "text": "really long rule test really long rule test really long rule test really long rule test really long rule test really long rule test",
+    "frequency": 0
   }]
 }

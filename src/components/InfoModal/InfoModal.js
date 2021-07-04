@@ -9,8 +9,9 @@ const InfoModal = ({version, showModal, handleClose}) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
       show={showModal}
+      className="myModal"
     >
-      <Modal.Header closeButton>
+      <Modal.Header closeButton style={{"borderColor": "#121212"}}>
         <Modal.Title id="contained-modal-title-vcenter">
           deathroll v{version}
         </Modal.Title>
@@ -20,8 +21,8 @@ const InfoModal = ({version, showModal, handleClose}) => {
         <p>Press the Big Red Button.<br/>Follow the rule that appears.<br/>Take turns repeat that until the number reaches a skull.<br/>Whoever rolls the skull loses, punish them as you see fit.</p>
         <p>This game is far from perfect, so don't spam the button or it will probably break on you.</p>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={() => {handleClose()}}>Close</Button>
+      <Modal.Footer style={{"borderColor": "#121212"}}>
+        <Button variant="outline-light" onClick={() => {handleClose()}}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

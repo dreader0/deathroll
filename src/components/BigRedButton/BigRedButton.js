@@ -13,7 +13,7 @@ const BigRedButton = ({onRoll, num, gameOver, rolling}) => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col className="mt-5 mb-3">
+        <Col className="mt-5 mb-4">
             <Button className="btn btn-default btn-circle bigButton shine" onClick={() => onRoll(num)} onKeyDown={handleSpace}>
             <NumWindow num={num} gameOver={gameOver}/>
           </Button>
