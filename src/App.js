@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Titlebar from './components/Titlebar/Titlebar';
 import BigRedButton from './components/BigRedButton/BigRedButton';
 import GameCard from './components/GameCard/GameCard';
@@ -32,8 +32,8 @@ const rulesList = rules.map((rule) => {
 // })
 
 let randomRulesList = []
- 
-class App extends Component{
+
+class App extends Component {
   constructor() {
     super()
     this.state = initialState;
@@ -50,7 +50,7 @@ class App extends Component{
     for (let i = 0; i < randomRules.rules.length; i++) {
       let frequency = randomRules.rules[i].frequency;
       // console.log(frequency);
-      for (let j=0; j < frequency; j++) {
+      for (let j = 0; j < frequency; j++) {
         randomRulesList.push(randomRules.rules[i]);
       }
     }
@@ -82,7 +82,7 @@ class App extends Component{
       var newNum = Math.ceil(Math.random() * num); // roll a random number
       var newText = this.setNewText(newNum);
       var stateTimeout = 1000 // used to delay text loading (sometimes we don't want a delay)
-    
+
       // check for duplicate roll and set state accordingly
       if (newNum === num) {
         newText += (" X" + this.state.dupe)
@@ -91,7 +91,7 @@ class App extends Component{
       } else {
         this.setState({ dupe: 2 });
       }
-      
+
       // only update num now if its not 1, otherwise do it later
       var updateNum = {
         rolling: true
@@ -119,50 +119,50 @@ class App extends Component{
         pastRoll = (this.state.ruleNum + ': ' + this.state.ruleText)
         pastRolls.unshift(pastRoll)
       }
-    
+
       var self = this;
       setTimeout(function () { self.setRolledRule(newState, pastRoll); }, stateTimeout);
     }
   }
 
   setRolledRule = (newState, pastRoll) => {
-    
+
     this.setState(newState);
   }
 
   handleShow = () => {
-    this.setState({showModal: true})
+    this.setState({ showModal: true })
   }
 
   handleClose = () => {
-    this.setState({showModal: false})
+    this.setState({ showModal: false })
   }
 
   render() {
     const { ruleNum, ruleText, rolling, gameOver, showModal } = this.state;
     return (
       <Container className="App">
-          <Row>
-            <Col><Titlebar /></Col>
-          </Row>
-          <Row>
-            <Col><BigRedButton num={ruleNum} onRoll={this.onRoll}  gameOver={gameOver} rolling={rolling}/></Col>
-          </Row>
-          <Row>
-            <Col><GameCard text={ruleText} rolling={rolling} pastRolls={pastRolls}/></Col>
-          </Row>
-          <Row>
-            <Col style={{cursor: "pointer"}} className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" onClick={this.handleShow}/></Col>
-            <InfoModal version={this.version} showModal={showModal} handleClose={this.handleClose}/>
-          </Row>
-        
+        <Row>
+          <Col><Titlebar /></Col>
+        </Row>
+        <Row>
+          <Col><BigRedButton num={ruleNum} onRoll={this.onRoll} gameOver={gameOver} rolling={rolling} /></Col>
+        </Row>
+        <Row>
+          <Col><GameCard text={ruleText} rolling={rolling} pastRolls={pastRolls} /></Col>
+        </Row>
+        <Row>
+          <Col style={{ cursor: "pointer" }} className="mt-5"><FontAwesomeIcon style={{ fontSize: "2rem" }} icon="info-circle" onClick={this.handleShow} /></Col>
+          <InfoModal version={this.version} showModal={showModal} handleClose={this.handleClose} />
+        </Row>
+
         {/* <Row>
           <Col>
             <h4 className="mt-3" style={{ color: '#F3F3F3', textShadow: '#000000AA -1px 2px' }}>v{version}</h4></Col>
         </Row> */}
       </Container>
     );
-  } 
+  }
 }
 
 export default App;

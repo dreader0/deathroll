@@ -1,78 +1,140 @@
 {
-  "rules": [{
-    "text": "really long rule test really long rule test really long rule test really long rule test really long rule test really long rule test",
-    "frequency": 0
-  },{
-    "text": "drink",
-    "frequency": 3
-  },{
-    "text": "make someone drink",
-    "frequency": 3
-  }, {
-    "text": "guys drink",
-    "frequency": 1
-  }, {
-    "text": "girls drink",
-    "frequency": 1
-  }, {
-    "text": "everyone drink",
-    "frequency": 2
-  }, {
-    "text": "drink twice",
-    "frequency": 1
-  }, {
-    "text": "drink with a friend",
-    "frequency": 1
-  }, {
-    "text": "pick a drinking buddy",
-    "frequency": 1
-  }, {
-    "text": "taller than 5'8\" drink",
-    "frequency": 1
-  }, {
-    "text": "shorter than 5'6\" drink",
-    "frequency": 1
-  }, {
-    "text": "players with matching socks drink",
-    "frequency": 1
-  }, {
-    "text": "never have i ever",
-    "frequency": 1
-  }, {
-    "text": "take a shot",
-    "frequency": 1
-  }, {
-    "text": "brown eyes drink",
-    "frequency": 1
-  }, {
-    "text": "blue eyes drink",
-    "frequency": 1
-  }, {
-    "text": "hazel eyes drink",
-    "frequency": 1
-  }, {
-    "text": "blondes drink",
-    "frequency": 1
-  }, {
-    "text": "brunettes drink",
-    "frequency": 1
-  }, {
-    "text": "redheads drink",
-    "frequency": 1
-  }, {
-    "text": "youngest drinks",
-    "frequency": 1
-  }, {
-    "text": "oldest drinks",
-    "frequency": 1
-  }, {
-    "text": "hands up - last one drinks",
-    "frequency": 1
-  }, {
-    "text": "single players drink",
-    "frequency": 1
-  }, {
-    "text": "non single players drink",
-    "frequency": 1
-  }]
+  "rules": [
+    {
+      "text": "really long rule test really long rule test really long rule test really long rule test really long rule test really long rule test",
+      "frequency": 0
+    },
+    {
+      "text": "drink",
+      "frequency": 2
+    },
+    {
+      "text": "make someone drink",
+      "frequency": 2
+    },
+    {
+      "text": "guys drink",
+      "frequency": 1
+    },
+    {
+      "text": "girls drink",
+      "frequency": 1
+    },
+    {
+      "text": "everyone drink",
+      "frequency": 2
+    },
+    {
+      "text": "drink twice",
+      "frequency": 1
+    },
+    {
+      "text": "drink with a friend",
+      "frequency": 1
+    },
+    {
+      "text": "pick a drinking buddy",
+      "frequency": 1
+    },
+    {
+      "text": "taller than 5'8\" drink",
+      "frequency": 1
+    },
+    {
+      "text": "shorter than 5'6\" drink",
+      "frequency": 1
+    },
+    {
+      "text": "between 5'6\" & 5'8\" drink",
+      "frequency": 1
+    },
+    {
+      "text": "players with matching socks drink",
+      "frequency": 1
+    },
+    {
+      "text": "never have i ever",
+      "frequency": 1
+    },
+    {
+      "text": "take a shot",
+      "frequency": 0
+    },
+    {
+      "text": "brown eyes drink",
+      "frequency": 1
+    },
+    {
+      "text": "blue eyes drink",
+      "frequency": 1
+    },
+    {
+      "text": "hazel eyes drink",
+      "frequency": 1
+    },
+    {
+      "text": "green eyes drink",
+      "frequency": 1
+    },
+    {
+      "text": "blondes drink",
+      "frequency": 1
+    },
+    {
+      "text": "brunettes drink",
+      "frequency": 1
+    },
+    {
+      "text": "redheads drink",
+      "frequency": 1
+    },
+    {
+      "text": "youngest drinks",
+      "frequency": 1
+    },
+    {
+      "text": "oldest drinks",
+      "frequency": 1
+    },
+    {
+      "text": "hands up - last one drinks",
+      "frequency": 1
+    },
+    {
+      "text": "single players drink",
+      "frequency": 1
+    },
+    {
+      "text": "non single players drink",
+      "frequency": 1
+    },
+    {
+      "text": "non-binary players drink",
+      "frequency": 1
+    },
+    {
+      "text": "players drinking coolers - drink",
+      "frequency": 1
+    },
+    {
+      "text": "players drinking beer - drink",
+      "frequency": 1
+    },
+    {
+      "text": "players drinking spirits - drink",
+      "frequency": 1
+    },
+    {
+      "text": "no more swearing until someone loses",
+      "frequency": 1
+    },
+    {
+      "text": "no more using the word drink until someone loses",
+      "frequency": 1
+    },
+    {
+      "text": "no more pointing until someone loses",
+      "frequency": 1
+    }
+  ]
 }
